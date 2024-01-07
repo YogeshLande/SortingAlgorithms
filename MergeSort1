@@ -1,6 +1,8 @@
 //Merge Sort Code
 
 public class MergeSort1 {
+
+    //Compare all Sorted array and Make Sorted array
     void merge(int arr[],int start,int mid,int end) {
         int n1 = mid - start + 1;
         int n2 = end - mid;
@@ -41,10 +43,12 @@ public class MergeSort1 {
         if(start<end){
             int mid = (start+end)/2;
 
-            mergeSort(arr,start,mid);
-            mergeSort(arr,mid+1,end);
+           // Array Divided into subarray
 
-            merge(arr,start,mid,end);
+            mergeSort(arr,start,mid);   //Double Recursion call1
+            mergeSort(arr,mid+1,end);   //Double Recursion call2
+
+            merge(arr,start,mid,end);    //Call to another function //its a Recursion call
         }
 
 
